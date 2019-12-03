@@ -1,0 +1,189 @@
+<!--
+*******************************************************************************
+ * Copyright © 2017-2018 VMware, Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ *
+ * @author: Huaqiao Zhang, <huaqiaoz@vmware.com>
+ *******************************************************************************
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link href="/css/devices/deviceService.css" rel="stylesheet">
+	<script type="text/javascript" src="/js/pages/devices/deviceService.js"></script>
+</head>
+
+<body>
+
+	<!-- device service start -->
+	<div class="edgexfoundry-device-service-main" style="position:relative;">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">DeviceService</h3>
+		  </div>
+		  <div class="panel panel-default" style="border:none;outline:none;margin:0;">
+		    <div class="panel-heading" style="padding:5px 2px;">
+					<div class="edgexIconBtn">
+						<i class="fa fa-refresh fa-lg fa-fw" aria-hidden="true" onclick="orgEdgexFoundry.deviceService.refreshDeviceService()"></i>
+					</div>
+		    </div>
+		  </div>
+
+		  <div class="panel-body" style="padding:0;overflow:auto;">
+				<div id="edgexfoundry-device-service-list">
+					<table class="table table-responsive table-hover table-striped">
+						<thead>
+							<tr class="active">
+								<!-- <th></th>
+								<th></th> -->
+								<th>#</th>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Labels</th>
+								<th>Addressable</th>
+								<th>OperatingState</th>
+								<th>AdminState</th>
+								<th>Devices</th>
+								<th>Created Time</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+						<tfoot style="display:none;">
+							<tr align="center">
+								<td colspan=13>No Data.</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+		  </div>
+		</div>
+
+		<!-- service addressable start -->
+		<div class="device-service-addressable">
+			<div class="panel panel-success" style="margin-bottom:0;">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Addressable
+						<button onclick="orgEdgexFoundry.deviceService.hideServiceAddressablePanel()" type="button" class="close pull-right" aria-label="Close"><span style="color:#333!important;" aria-hidden="true">&times;</span></button>
+					</h3>
+				</div>
+				<div class="panel-body" style="padding:0;margin-bottom:0!important;overflow:auto;">
+					<table class="table table-responsive table-hover table-striped">
+						<thead>
+							<tr class="active">
+								<th>ID</th>
+								<th>Name</th>
+								<th>Protocol</th>
+								<th>Address</th>
+								<th>Port</th>
+								<th>Path</th>
+								<th>Created Time</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- service addressable end -->
+	</div>
+	<!-- device service end -->
+
+	<!-- device profile start -->
+	<div id="add-profile-panel" style="display: none;">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">New Profile</h3>
+			</div>
+			<div class="panel panel-default" style="border:none;outline:none;margin:0;">
+				<div class="panel-heading" style="padding:5px 2px;">
+					<div class="edgexIconBtn" onclick="orgEdgexFoundry.deviceService.uploadProfile();">
+						<i class="fa fa-check fa-lg" aria-hidden="true"></i>
+					</div>
+					<div class="edgexIconBtn" onclick="orgEdgexFoundry.deviceService.cancelAddDeviceProfile()">
+						<i class="fa fa-close fa-lg" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body" style="padding:0;height:80px;">
+				<form target="upload-profile-response" >
+					<div class="form-group">
+						<label for="add-profile-action" class="col-md-1 control-label" style="padding-top:5px;text-align:right;" ><i class="fa fa-file-text fa-lg"></i></label>
+						<div class="col-md-11">
+							<input class="new-file-proview form-control" style="width:300px;" type="text" disabled >
+							<input style="display: none;" id="add-profile-action" accept=".yaml,.yml" type="file" name="file" multiple="multiple" onchange="orgEdgexFoundry.deviceService.onSelectFileCompleted();">
+						</div>
+					</div>
+				</form>
+				<iframe name="upload-profile-response" style="display: none;"></iframe>
+			</div>
+		</div>
+	</div>
+
+	<div class="edgexfoundry-device-profile-main">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Device Profile</h3>
+		  </div>
+		  <div class="panel panel-default" style="border:none;outline:none;margin:0;">
+		    <div class="panel-heading" style="padding:5px 2px;">
+					<div class="edgexIconBtn" onclick="orgEdgexFoundry.deviceService.showUploadFilePanel()">
+ 					 <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true"></i>
+ 				 </div>
+ 				 <div class="edgexIconBtn" onclick="orgEdgexFoundry.deviceService.refreshProfile()">
+ 					 <i class="fa fa-refresh fa-lg fa-fw" aria-hidden="true" ></i>
+ 				 </div>
+		    </div>
+		  </div>
+
+		  <div class="panel-body" style="padding:0;overflow:auto;">
+				<table class="table table-responsive table-hover table-striped">
+					<thead>
+						<tr class="active">
+
+							<th></th>
+							<th>#</th>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Labels</th>
+							<th>Created Time</th>
+							<th>Modified Time</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<tfoot style="display:none;">
+						<tr align="center">
+							<td colspan=13>No Data.</td>
+						</tr>
+					</tfoot>
+				</table>
+		  </div>
+		</div>
+	</div>
+	<!-- device profile end -->
+
+	<!-- device start -->
+	<!-- device end -->
+
+</body>
+
+</html>
