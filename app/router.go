@@ -19,8 +19,8 @@ package app
 import (
 	"net/http"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/component"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/controller"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/component"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/controller"
 	mux "github.com/gorilla/mux"
 )
 

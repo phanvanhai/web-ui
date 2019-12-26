@@ -21,9 +21,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/common"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/component"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/domain"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/common"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/component"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/domain"
 )
 
 func ExportShow(w http.ResponseWriter, r *http.Request) {

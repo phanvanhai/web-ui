@@ -19,7 +19,7 @@ package mongo
 import (
 	"log"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/domain"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/domain"
 	"gopkg.in/mgo.v2/bson"
 )
 

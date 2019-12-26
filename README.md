@@ -2,10 +2,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/edgexfoundry/edgex-ui-go)](https://goreportcard.com/report/github.com/edgexfoundry/edgex-ui-go) [![license](https://img.shields.io/badge/license-Apache%20v2.0-blue.svg)](LICENSE)
 > Go implementation of EdgeX Web UI.
 
-<p align="center">
-  <img src ="assets/images/export.png" />
-</p>
-
 ```
 ├── app
 │   ├── common
@@ -38,40 +34,23 @@
     └── deployments
 ```
 
-
-## Some video demo links
-
-* https://www.youtube.com/watch?v=2EOHR_gUeic&t=570s
-* https://www.edgexfoundry.club
-
-## face to face room at the appointed time, please contact to us before you want to have face-to-face chat.
-
-https://VMware.zoom.us/j/3697467292
-
 ## Running in docker
 
 ```
-docker pull edgexfoundry/docker-edgex-ui-go:1.0.0
+docker pull phanvanhai/docker-edgex-ui-go:1.1.0
 
-docker run -it -d -p 4000:4000 --name edgex-ui-go edgexfoundry/docker-edgex-ui-go:1.0.0
+docker run -it -d -p 4500:4500 --name edgex-ui-go-custom phanvanhai/docker-edgex-ui-go:1.1.0
 ```
 
 ## Install and Deploy
 
 To fetch the code and compile the web-based UI:
 
-Using `go get`:
-```
-go get github.com/edgexfoundry/edgex-ui-go
-cd $GOPATH/src/github.com/edgexfoundry/edgex-ui-go
-make build
-```
-
 Using Git:
 ```
 cd $GOPATH/src
-git clone http://github.com/edgexfoundry/edgex-ui-go.git github.com/edgexfoundry/edgex-ui-go
-cd $GOPATH/src/github.com/edgexfoundry/edgex-ui-go
+git clone http://github.com/phanvanhai/edgex-ui-go.git github.com/edgexfoundry/edgex-ui-go-custom
+cd $GOPATH/src/github.com/edgexfoundry/edgex-ui-go-custom
 make build
 ```
 
@@ -109,7 +88,7 @@ make test
 
 ### Logging in
 
-With a modern browser, navigate to http://localhost:4000.
+With a modern browser, navigate to http://localhost:4500.
 The default user credentials are:
 
 ```

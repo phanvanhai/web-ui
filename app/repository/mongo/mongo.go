@@ -22,7 +22,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/configs"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/configs"
 	mgo "gopkg.in/mgo.v2"
 )
 

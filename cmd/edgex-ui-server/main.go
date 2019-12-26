@@ -21,11 +21,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/common"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/configs"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/repository/mm"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/repository/mongo"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/common"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/configs"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/repository/mm"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/repository/mongo"
 )
 
 func main() {

@@ -21,8 +21,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/configs"
-	"github.com/edgexfoundry/edgex-ui-go-modify/app/domain"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/configs"
+	"github.com/edgexfoundry/edgex-ui-go-custom/app/domain"
 )
 
 //{Token:User}

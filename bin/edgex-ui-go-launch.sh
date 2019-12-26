@@ -7,15 +7,15 @@
 #
 
 DIR=$PWD
-CMD=../cmd/edgex-ui-server-modify
+CMD=../cmd/edgex-ui-server
 
 # Kill all edgex-ui-go* stuff
 function cleanup {
-	pkill edgex-ui-server-modify
+	pkill edgex-ui-server
 }
 
 cd $CMD
-exec -a edgex-ui-server-modify ./edgex-ui-server-modify &
+exec -a edgex-ui-server ./edgex-ui-server &
 cd $DIR
 
 trap cleanup EXIT
